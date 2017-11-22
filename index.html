@@ -151,6 +151,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MSF嗅探FTP密码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/MSF嗅探FTP密码/">MSF嗅探FTP密码</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/MSF嗅探FTP密码/" class="archive-article-date">
+  	<time datetime="2017-11-22T12:25:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>首先先打开msf，输入命令<font color="red">use auxiliary/sniffer/psnuffle </font> 进入密码嗅探模块<br>输入<font color="red">show options</font>查看选项<br><img src="/2017/11/22/MSF嗅探FTP密码/1.png" alt=""></p>
+<p>似乎没什么要让我们填的，应该就是嗅探整个局域网里的FTP用户名和密码，那我们直接输入<font color="red">run</font>来运行模块<br><img src="/2017/11/22/MSF嗅探FTP密码/2.png" alt=""></p>
+<p>假设我是局域网里的一位受害者，现在我要远程登陆FTP<br><img src="/2017/11/22/MSF嗅探FTP密码/3.png" alt=""><br><img src="/2017/11/22/MSF嗅探FTP密码/4.png" alt=""></p>
+<p>登陆成功后返回kali，发现kali已经获取了刚刚我输入的用户名和密码<br><img src="/2017/11/22/MSF嗅探FTP密码/5.png" alt=""></p>
+<p>然后你也就能够远程登陆FTP了</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/MSF嗅探FTP密码/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-CTF练习平台-WEB-代码审计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
