@@ -151,6 +151,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MSF生成后门拿-windows-shell" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/MSF生成后门拿-windows-shell/">MSF生成后门拿 windows shell</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/MSF生成后门拿-windows-shell/" class="archive-article-date">
+  	<time datetime="2017-11-22T15:38:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>kali  x64:192.168.26.136<br>win7  x86: 192.168.26.128</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>先在kali终端输入<font color="red">msfvenom -l</font>，打开payload目录<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/1.png" alt=""></p>
+<p>然后找到<font color="red">payload windows/meterpreter/reverse_tcp</font><br>输入以下命令生成后门qq.exe<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/2.png" alt=""></p>
+<p>然后将生成的qq.exe移到win7中，然后打开msfconsole<br>使用该攻击模块监听<font color="red"> use exploit/multi/handler</font><br>然后设置payload<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/3.png" alt=""></p>
+<p>show options 查看选项<br>设置LHOST为kali地址<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/4.png" alt=""></p>
+<p>然后run开始监听<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/5.png" alt=""></p>
+<p>这时我们打开win7的qq.exe文件<br>就能看到Kali这边获取到一个Session<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/6.png" alt=""></p>
+<p>输入jobs退出，继续输入sessions -l查看session列表<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/7.png" alt=""></p>
+<p>这里有一个session列表，sessionid为1<br>我们输入sessions -i 1,与该session交互<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/8.png" alt=""></p>
+<p>输入getuid查看用户信息<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/9.png" alt=""></p>
+<p>输入systinfo获取系统信息<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/10.png" alt=""></p>
+<p>输入shell即可获取win7的shell<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/11.png" alt=""></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/MSF生成后门拿-windows-shell/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MSF嗅探FTP密码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
