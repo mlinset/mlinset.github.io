@@ -151,6 +151,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CTF练习平台-WEB-代码审计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/CTF练习平台-WEB-代码审计/">CTF练习平台-WEB-代码审计</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/CTF练习平台-WEB-代码审计/" class="archive-article-date">
+  	<time datetime="2017-11-22T06:21:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这题怎么说呢，非常恶心，虽然flag没出来，但是我觉得差不多了，坐等大神最后的WriteUp,这里我讲下我做题的思路</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>我先把源代码整理好,然后搭建好实验环境，由于代码太多我就不全部展示出来，<br>首先先看入口代码<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/1.png" alt=""><br>这里是判断是否存在$_GET[‘data’]变量，存在则将其反序列化，否则显示源代码，也就是说我们输入的值必须是经过序列化的<br>现在我们来看看CLASS里的结构<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/2.png" alt=""><br>变量$method和$arg是用来传参的，接着我们进入<strong>conn函数<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/3.png" alt=""><br>这个函数主要是用于连接数据库并且创建一个有数据的数据表<br>看完之后，再看看其他自动执行函数<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/4.png" alt="">
+</strong>destruct()函数的主要作用是验证传入的变量$method的值是否为”show”, “login”, “source”,如果为True则将数组$arg的值调用至该函数中<br>__wakeup()函数主要作用为遍历数组$arg的每个值并且进行一次字符转义</p>
+<p>然后我们再分别看show函数、login函数和source函数，最后发现flag在login函数里，则我们将login传入$method的值里，现在我们看login函数的结构<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/5.png" alt=""><br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/6.png" alt="">这里可以看到,$arg数组里传出来的值赋给了$username和$password，然后$username和$password又被字符转义了一遍,也就是说总共被转义了两次，要想拿到flag，用户名就不能是orange,但是字段为admin的也就只有orange用户<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/7.png" alt=""><br>这时我们就需要对这个sql语句进行注入了，我们本地再搭一个环境，方便注入<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/8.png" alt=""><br>主要就是两次字符转义,我们先按照数据库里的数据输入orange,hhh123<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/9.png" alt=""></p>
+<p>查询到两条记录，说明代码还是没写错的,接下来我们尝试加一个单引号<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/10.png" alt="">，因为转义两次，所以多了三个反斜杠，看到反斜杠就想到宽字节注入，输入%df%27<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/11.png" alt="">,因为前面的反斜杠转义了后面的反斜杠，所以我们输入的单引号不会被转义，然后利用#号注释后面的单引号，从而达到闭合，然后我们尝试输入payload使查询字段role的值为admin，然而输入用户名又不能为orange<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/12.png" alt="">这样我们输入的username就不是orange，但是查询到的字段role的值却是admin，从而得到flag，<br>但实际上不知道哪里出错了，导致flag没出现</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/CTF练习平台-WEB-代码审计/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-CTF练习平台-WEB-过狗一句话" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
