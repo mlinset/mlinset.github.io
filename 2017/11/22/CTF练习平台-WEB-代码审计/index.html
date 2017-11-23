@@ -5,32 +5,32 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://mlins.cn">
   <title>CTF练习平台-WEB-代码审计 | Mlins</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这题怎么说呢，非常恶心，虽然flag没出来，但是我觉得差不多了，坐等大神最后的WriteUp,这里我讲下我做题的思路    我先把源代码整理好,然后搭建好实验环境，由于代码太多我就不全部展示出来，首先先看入口代码这里是判断是否存在$_GET[‘data’]变量，存在则将其反序列化，否则显示源代码，也就是说我们输入的值必">
+  <meta name="description" content="这题代码审计怎么说呢，非常恶心，虽然flag没出来，但是我觉得差不多了，坐等大神最后的WriteUp,这里我讲下我做题的思路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CTF练习平台-WEB-代码审计">
-<meta property="og:url" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/index.html">
+<meta property="og:url" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/index.html">
 <meta property="og:site_name" content="Mlins">
-<meta property="og:description" content="这题怎么说呢，非常恶心，虽然flag没出来，但是我觉得差不多了，坐等大神最后的WriteUp,这里我讲下我做题的思路    我先把源代码整理好,然后搭建好实验环境，由于代码太多我就不全部展示出来，首先先看入口代码这里是判断是否存在$_GET[‘data’]变量，存在则将其反序列化，否则显示源代码，也就是说我们输入的值必须是经过序列化的现在我们来看看CLASS里的结构变量$method和$arg是">
-<meta property="og:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/1.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/2.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/3.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/4.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/5.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/6.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/7.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/8.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/9.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/10.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/11.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/12.png">
-<meta property="og:updated_time" content="2017-11-22T10:29:50.025Z">
+<meta property="og:description" content="这题代码审计怎么说呢，非常恶心，虽然flag没出来，但是我觉得差不多了，坐等大神最后的WriteUp,这里我讲下我做题的思路">
+<meta property="og:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/1.png">
+<meta property="og:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/2.png">
+<meta property="og:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/3.png">
+<meta property="og:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/4.png">
+<meta property="og:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/5.png">
+<meta property="og:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/6.png">
+<meta property="og:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/7.png">
+<meta property="og:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/8.png">
+<meta property="og:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/9.png">
+<meta property="og:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/10.png">
+<meta property="og:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/11.png">
+<meta property="og:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/12.png">
+<meta property="og:updated_time" content="2017-11-23T08:52:19.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CTF练习平台-WEB-代码审计">
-<meta name="twitter:description" content="这题怎么说呢，非常恶心，虽然flag没出来，但是我觉得差不多了，坐等大神最后的WriteUp,这里我讲下我做题的思路    我先把源代码整理好,然后搭建好实验环境，由于代码太多我就不全部展示出来，首先先看入口代码这里是判断是否存在$_GET[‘data’]变量，存在则将其反序列化，否则显示源代码，也就是说我们输入的值必须是经过序列化的现在我们来看看CLASS里的结构变量$method和$arg是">
-<meta name="twitter:image" content="http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/1.png">
+<meta name="twitter:description" content="这题代码审计怎么说呢，非常恶心，虽然flag没出来，但是我觉得差不多了，坐等大神最后的WriteUp,这里我讲下我做题的思路">
+<meta name="twitter:image" content="http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Mlins" type="application/atom+xml">
   
@@ -186,10 +186,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>这题怎么说呢，非常恶心，虽然flag没出来，但是我觉得差不多了，坐等大神最后的WriteUp,这里我讲下我做题的思路</p>
-</blockquote>
-<hr>
+        <p>这题代码审计怎么说呢，非常恶心，虽然flag没出来，但是我觉得差不多了，坐等大神最后的WriteUp,这里我讲下我做题的思路<br><a id="more"></a></p>
 <blockquote>
 <p>我先把源代码整理好,然后搭建好实验环境，由于代码太多我就不全部展示出来，<br>首先先看入口代码<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/1.png" alt=""><br>这里是判断是否存在$_GET[‘data’]变量，存在则将其反序列化，否则显示源代码，也就是说我们输入的值必须是经过序列化的<br>现在我们来看看CLASS里的结构<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/2.png" alt=""><br>变量$method和$arg是用来传参的，接着我们进入<strong>conn函数<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/3.png" alt=""><br>这个函数主要是用于连接数据库并且创建一个有数据的数据表<br>看完之后，再看看其他自动执行函数<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/4.png" alt="">
 </strong>destruct()函数的主要作用是验证传入的变量$method的值是否为”show”, “login”, “source”,如果为True则将数组$arg的值调用至该函数中<br>__wakeup()函数主要作用为遍历数组$arg的每个值并且进行一次字符转义</p>
@@ -275,7 +272,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/11/22/CTF练习平台-WEB-代码审计/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://mlins.cn/2017/11/22/CTF练习平台-WEB-代码审计/" alt="微信分享二维码">
     </div>
 </div>
 

