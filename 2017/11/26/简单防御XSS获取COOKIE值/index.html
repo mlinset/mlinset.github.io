@@ -6,22 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://mlins.cn">
-  <title>实验吧-WEB-程序逻辑问题 | Mlins</title>
+  <title>简单防御XSS获取COOKIE值 | Mlins</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="代码审计">
+  <meta name="description" content="一只WEB小白成长的道路">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实验吧-WEB-程序逻辑问题">
-<meta property="og:url" content="http://mlins.cn/2017/11/25/实验吧-WEB-程序逻辑问题/index.html">
+<meta property="og:title" content="简单防御XSS获取COOKIE值">
+<meta property="og:url" content="http://mlins.cn/2017/11/26/简单防御XSS获取COOKIE值/index.html">
 <meta property="og:site_name" content="Mlins">
-<meta property="og:description" content="代码审计">
-<meta property="og:image" content="http://mlins.cn/2017/11/25/实验吧-WEB-程序逻辑问题/1.png">
-<meta property="og:image" content="http://mlins.cn/2017/11/25/实验吧-WEB-程序逻辑问题/2.png">
-<meta property="og:image" content="http://mlins.cn/2017/11/25/实验吧-WEB-程序逻辑问题/3.png">
-<meta property="og:updated_time" content="2017-11-25T03:58:02.883Z">
+<meta property="og:description" content="一只WEB小白成长的道路">
+<meta property="og:updated_time" content="2017-11-26T14:19:03.399Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="实验吧-WEB-程序逻辑问题">
-<meta name="twitter:description" content="代码审计">
-<meta name="twitter:image" content="http://mlins.cn/2017/11/25/实验吧-WEB-程序逻辑问题/1.png">
+<meta name="twitter:title" content="简单防御XSS获取COOKIE值">
+<meta name="twitter:description" content="一只WEB小白成长的道路">
   
     <link rel="alternative" href="/atom.xml" title="Mlins" type="application/atom+xml">
   
@@ -135,33 +131,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-实验吧-WEB-程序逻辑问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-简单防御XSS获取COOKIE值" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      实验吧-WEB-程序逻辑问题
+      简单防御XSS获取COOKIE值
     </h1>
   
 
         
-        <a href="/2017/11/25/实验吧-WEB-程序逻辑问题/" class="archive-article-date">
-  	<time datetime="2017-11-25T03:26:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-25</time>
+        <a href="/2017/11/26/简单防御XSS获取COOKIE值/" class="archive-article-date">
+  	<time datetime="2017-11-26T14:16:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>代码审计<br><a id="more"></a></p>
+        <p>一只WEB小白成长的道路<br><a id="more"></a></p>
 <blockquote>
-<p>查看源代码<br><img src="/2017/11/25/实验吧-WEB-程序逻辑问题/1.png" alt=""><br>      <br><br>这里的变量$pass是经过md5加密的，然后总结得到flag所需要的条件<br>  <br><br>1、SQL语句根据user查询出来的值要和经过md5加密后变量$pass的值要相等<br>2、查询结果不能为空<br>  <br><br>这里直接给出payload，user=1%27/**/union/**/select/**/md5(1)%23&amp;pass=1<br>  <br><br>把这句放到cmd里运行<br><img src="/2017/11/25/实验吧-WEB-程序逻辑问题/2.png" alt=""></p>
-</blockquote>
-<p>  <br></p>
-<blockquote>
-<p>因为这句前面的sql查询语句查询不到结果，所以就只会显示后面的sql语句查询结果，这样我们就嗯那个绕过了<br><img src="/2017/11/25/实验吧-WEB-程序逻辑问题/3.png" alt=""></p>
+<p>今天在<strong>《白帽子讲浏览器安全》</strong></p>
 </blockquote>
 
       
@@ -221,7 +213,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://mlins.cn/2017/11/25/实验吧-WEB-程序逻辑问题/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://mlins.cn/2017/11/26/简单防御XSS获取COOKIE值/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -235,18 +227,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/26/简单防御XSS获取COOKIE值/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          简单防御XSS获取COOKIE值
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/24/CVE-2017-11882-master漏洞的复现/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CVE-2017-11882-master漏洞的复现</div>
+    <a href="/2017/11/25/实验吧-WEB-程序逻辑问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">实验吧-WEB-程序逻辑问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
