@@ -6,25 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://mlins.cn">
-  <title>简单防御XSS获取COOKIE值 | Mlins</title>
+  <title>sql注入步骤 | Mlins</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一只WEB小白成长的道路">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单防御XSS获取COOKIE值">
-<meta property="og:url" content="http://mlins.cn/2017/11/26/简单防御XSS获取COOKIE值/index.html">
+<meta property="og:title" content="sql注入步骤">
+<meta property="og:url" content="http://mlins.cn/2017/12/10/sql注入步骤/index.html">
 <meta property="og:site_name" content="Mlins">
 <meta property="og:description" content="一只WEB小白成长的道路">
-<meta property="og:image" content="http://mlins.cn/2017/11/26/简单防御XSS获取COOKIE值/1.png">
-<meta property="og:image" content="http://mlins.cn/2017/11/26/简单防御XSS获取COOKIE值/2.png">
-<meta property="og:image" content="http://mlins.cn/2017/11/26/简单防御XSS获取COOKIE值/3.png">
-<meta property="og:image" content="http://mlins.cn/2017/11/26/简单防御XSS获取COOKIE值/4.png">
-<meta property="og:image" content="http://mlins.cn/2017/11/26/简单防御XSS获取COOKIE值/5.png">
-<meta property="og:image" content="http://mlins.cn/2017/11/26/简单防御XSS获取COOKIE值/6.png">
-<meta property="og:updated_time" content="2017-11-26T14:48:52.856Z">
+<meta property="og:updated_time" content="2017-12-10T08:24:06.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单防御XSS获取COOKIE值">
+<meta name="twitter:title" content="sql注入步骤">
 <meta name="twitter:description" content="一只WEB小白成长的道路">
-<meta name="twitter:image" content="http://mlins.cn/2017/11/26/简单防御XSS获取COOKIE值/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Mlins" type="application/atom+xml">
   
@@ -138,20 +131,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-简单防御XSS获取COOKIE值" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-sql注入步骤" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      简单防御XSS获取COOKIE值
+      sql注入步骤
     </h1>
   
 
         
-        <a href="/2017/11/26/简单防御XSS获取COOKIE值/" class="archive-article-date">
-  	<time datetime="2017-11-26T14:16:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-26</time>
+        <a href="/2017/12/10/sql注入步骤/" class="archive-article-date">
+  	<time datetime="2017-12-10T08:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-10</time>
 </a>
         
       </header>
@@ -160,13 +153,8 @@
       
         <p></p><p style="color:rgb(0,136,204)">一只WEB小白成长的道路</p><br><a id="more"></a><p></p>
 <blockquote>
-<p>今天在<strong>《白帽子讲浏览器安全》</strong> 看到了httponly属性方法，可以简单防御XSS盗取用户COOKIE，于是我本地做了一下测试</p>
-<hr>
-<p>首先先不做任何防御，直接用JS获取COOKIE值<br><img src="/2017/11/26/简单防御XSS获取COOKIE值/1.png" alt=""><br><img src="/2017/11/26/简单防御XSS获取COOKIE值/2.png" alt=""><br>可以看到JS成功获取到用户的COOKIE值</p>
-<hr>
-<p>现在我们设置httponly属性,在setcookie中，第七个位置，设置为True<br><img src="/2017/11/26/简单防御XSS获取COOKIE值/3.png" alt=""><br><img src="/2017/11/26/简单防御XSS获取COOKIE值/4.png" alt=""><br>可以看到我们上面获取的user=admin消失了，设置httponly属性是取消了document中的Cookie属性，但是这个毕竟是简单的防御，JS和浏览器不能获取cookie,但是PHP后台还是能获取的</p>
+<p>注入类型<br>数字型注入点判断: ?id=1 and 1=1 显示正常</p>
 </blockquote>
-<p><img src="/2017/11/26/简单防御XSS获取COOKIE值/5.png" alt=""><br><img src="/2017/11/26/简单防御XSS获取COOKIE值/6.png" alt=""></p>
 
       
 
@@ -225,7 +213,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://mlins.cn/2017/11/26/简单防御XSS获取COOKIE值/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://mlins.cn/2017/12/10/sql注入步骤/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -239,18 +227,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/10/sql注入步骤/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          sql注入步骤
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/25/实验吧-WEB-程序逻辑问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">实验吧-WEB-程序逻辑问题</div>
+    <a href="/2017/11/26/简单防御XSS获取COOKIE值/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">简单防御XSS获取COOKIE值</div>
       <i class="icon-circle-right"></i>
     </a>
   
