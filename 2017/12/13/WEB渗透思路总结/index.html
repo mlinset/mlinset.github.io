@@ -14,10 +14,12 @@
 <meta property="og:url" content="http://mlins.cn/2017/12/13/WEB渗透思路总结/index.html">
 <meta property="og:site_name" content="Mlins">
 <meta property="og:description" content="一只WEB小白成长的道路">
-<meta property="og:updated_time" content="2017-12-13T07:30:21.643Z">
+<meta property="og:image" content="http://mlins.cn/2017/12/13/WEB渗透思路总结/1.png">
+<meta property="og:updated_time" content="2017-12-13T09:46:56.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WEB渗透思路总结">
 <meta name="twitter:description" content="一只WEB小白成长的道路">
+<meta name="twitter:image" content="http://mlins.cn/2017/12/13/WEB渗透思路总结/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Mlins" type="application/atom+xml">
   
@@ -153,9 +155,37 @@
       
         <p></p><p style="color:rgb(0,136,204)">一只WEB小白成长的道路</p><br><a id="more"></a><p></p>
 <blockquote>
-<h3 id="0x001-拿到一个待检测的网站，你觉得应该先做什么"><a href="#0x001-拿到一个待检测的网站，你觉得应该先做什么" class="headerlink" title="0x001.拿到一个待检测的网站，你觉得应该先做什么"></a><strong>0x001.拿到一个待检测的网站，你觉得应该先做什么</strong></h3><p><strong>收集信息</strong><br>whois、网站源IP、旁站、C段网站、服务器系统版本、容器版本、程序版本、数据库类型、二级域名、防火墙、维护者信息另说….</p>
+<h3 id="0x001-拿到一个待检测的网站，你觉得应该先做什么"><a href="#0x001-拿到一个待检测的网站，你觉得应该先做什么" class="headerlink" title="0x001.拿到一个待检测的网站，你觉得应该先做什么?"></a><strong>0x001.拿到一个待检测的网站，你觉得应该先做什么?</strong></h3><p><strong>收集信息:<br>whois、网站源IP、旁站、C段网站、服务器系统版本、容器版本、程序版本、数据库类型、二级域名、防火墙、维护者信息另说….</strong></p>
 <hr>
-<h3 id="0x002"><a href="#0x002" class="headerlink" title="0x002."></a><strong>0x002.</strong></h3></blockquote>
+<h3 id="0x002-Mysql的网站注入，5-0以上和5-0以下有什么区别？"><a href="#0x002-Mysql的网站注入，5-0以上和5-0以下有什么区别？" class="headerlink" title="0x002.Mysql的网站注入，5.0以上和5.0以下有什么区别？"></a>0x002.Mysql的网站注入，5.0以上和5.0以下有什么区别？</h3><p><strong>5.0以下没有iformation_schema这个系统表，只能暴力跑表名。<br>5.0以下是多用户但操作，5.0以上是多用户多操作</strong></p>
+<hr>
+<h3 id="0x003-在渗透过程中，收集目标站注册人邮箱对我们有什么价值"><a href="#0x003-在渗透过程中，收集目标站注册人邮箱对我们有什么价值" class="headerlink" title="0x003.在渗透过程中，收集目标站注册人邮箱对我们有什么价值?"></a>0x003.在渗透过程中，收集目标站注册人邮箱对我们有什么价值?</h3><p><strong>丢社工库里看啊可能有没有泄露密码，然后尝试用泄露的密码进行登陆后台。<br>用邮箱做关键词进行丢进搜索引擎。<br>利用搜索到的关联信息找出其他邮件而得到常用社交账号。<br>社工找出社交账号，里面或许会找出管理员设置密码的习惯。<br>利用已有信息生成专用字典。<br>观察管理员常逛哪些非大众性网站，拿下它，你会得到更多好东西。</strong></p>
+<h3 id="0x004-判断出网站的CMS对渗透有什么意义"><a href="#0x004-判断出网站的CMS对渗透有什么意义" class="headerlink" title="0x004.判断出网站的CMS对渗透有什么意义?"></a>0x004.判断出网站的CMS对渗透有什么意义?</h3><p><strong>查找网上已曝光的程序漏洞。<br>如果开源，还能下载相对应的源码进行代码审计。</strong></p>
+<h3 id="0x005-一个成熟并且相对安全的CMS，渗透时扫目录的意义是什么"><a href="#0x005-一个成熟并且相对安全的CMS，渗透时扫目录的意义是什么" class="headerlink" title="0x005.一个成熟并且相对安全的CMS，渗透时扫目录的意义是什么?"></a>0x005.一个成熟并且相对安全的CMS，渗透时扫目录的意义是什么?</h3><p><strong>敏感文件、二级目录扫描<br>站长的误操作比如:网站备份的压缩文件、说明txt、二级目录可能存放着其他站点</strong></p>
+<h3 id="0x006-常见网站服务器容器"><a href="#0x006-常见网站服务器容器" class="headerlink" title="0x006.常见网站服务器容器"></a>0x006.常见网站服务器容器</h3><p><strong>IIS、Apache、Nginx、Lighttpd、Tomcat</strong></p>
+<h3 id="0x007-Mysql注入点，用工具对目标网站直接写入一句话，需要哪些条件"><a href="#0x007-Mysql注入点，用工具对目标网站直接写入一句话，需要哪些条件" class="headerlink" title="0x007.Mysql注入点，用工具对目标网站直接写入一句话，需要哪些条件?"></a>0x007.Mysql注入点，用工具对目标网站直接写入一句话，需要哪些条件?</h3><p><strong>root权限以及网站的绝对路径</strong></p>
+<h3 id="0x008-目标已知哪些WEB容器含有解析漏洞"><a href="#0x008-目标已知哪些WEB容器含有解析漏洞" class="headerlink" title="0x008.目标已知哪些WEB容器含有解析漏洞?"></a>0x008.目标已知哪些WEB容器含有解析漏洞?</h3><p><strong><font color="red">IIS 6.0</font></strong><br><strong>/xxx.asp/xxx.jpg    会将xxx.jpg当作asp脚本解析。’xxx.asp’是文件夹名</strong><br><strong><font color="red">IIS 7.0/7.5</font></strong><br><strong>默认Fast-CGI开启，直接在url中图片地址输入1.php，会把正常图片当作php脚本解析</strong><br><strong><font color="red">Nginx</font></strong><br><strong>版本小于等于0.8.37，利用方法和IIS 7.0/7.5一样，Fast-CGI关闭情况下也可以利用</strong><br><strong><font color="red">Apache</font></strong><br><strong>由于Apache是从左到右判断后缀的，遇到不认识的后缀名便会往右一个一个识别，直到识别出为止，所以上传1.xx.asd.vsa.php也为php脚本</strong><br><strong><font color="red">Lighttpd</font></strong><br><strong>这个就不是很清楚了。。</strong></p>
+<h3 id="0x009-如何手工快速判断服务器是Linux还是Windows的"><a href="#0x009-如何手工快速判断服务器是Linux还是Windows的" class="headerlink" title="0x009.如何手工快速判断服务器是Linux还是Windows的?"></a>0x009.如何手工快速判断服务器是Linux还是Windows的?</h3><p><strong>Linux对大小写敏感，Windows对大小写不敏感</strong></p>
+<h3 id="0x010-为何mysql数据库的站只有一个80端口开放"><a href="#0x010-为何mysql数据库的站只有一个80端口开放" class="headerlink" title="0x010.为何mysql数据库的站只有一个80端口开放?"></a>0x010.为何mysql数据库的站只有一个80端口开放?</h3><p><strong>更改了端口，没有扫描出来<br>站库分离。<br>3306端口不对外开放</strong></p>
+<h3 id="0x011-3389端口无法连接的原因。"><a href="#0x011-3389端口无法连接的原因。" class="headerlink" title="0x011.3389端口无法连接的原因。"></a>0x011.3389端口无法连接的原因。</h3><p><strong>没开放3389端口<br>端口被修改<br>防护拦截<br>处于内网(需要端口转发)</strong></p>
+<h3 id="0x012-如何绕过注入时，字符被转义的网站"><a href="#0x012-如何绕过注入时，字符被转义的网站" class="headerlink" title="0x012.如何绕过注入时，字符被转义的网站?"></a>0x012.如何绕过注入时，字符被转义的网站?</h3><p><strong>hex编码绕过<br>宽字节注入</strong></p>
+<h3 id="0x013-在某后台新闻编辑界面看到编辑器，应该先做什么"><a href="#0x013-在某后台新闻编辑界面看到编辑器，应该先做什么" class="headerlink" title="0x013.在某后台新闻编辑界面看到编辑器，应该先做什么?"></a>0x013.在某后台新闻编辑界面看到编辑器，应该先做什么?</h3><p><strong>查看编辑器的版本，然后搜索公开漏洞</strong></p>
+<h3 id="0x014-拿到一个WEBShell发现网站根目录下有-htaccess文件，我们能做什么"><a href="#0x014-拿到一个WEBShell发现网站根目录下有-htaccess文件，我们能做什么" class="headerlink" title="0x014.拿到一个WEBShell发现网站根目录下有.htaccess文件，我们能做什么?"></a>0x014.拿到一个WEBShell发现网站根目录下有.htaccess文件，我们能做什么?</h3><p><strong>能做的事情很多，用隐藏网马来举例子:插入 SetHandler application/x-httpd-php .jpg文件会被解析成功.php文件。具体其他事情，大家自己可以其搜索语句来玩。</strong></p>
+<h3 id="0x015-注入楼的只能查到账号密码"><a href="#0x015-注入楼的只能查到账号密码" class="headerlink" title="0x015.注入楼的只能查到账号密码?"></a>0x015.注入楼的只能查到账号密码?</h3><p><strong>值要权限广，拖库拖到老。</strong></p>
+<h3 id="0x016-安全狗会追踪变量，从而发现出是一句话木马吗？"><a href="#0x016-安全狗会追踪变量，从而发现出是一句话木马吗？" class="headerlink" title="0x016.安全狗会追踪变量，从而发现出是一句话木马吗？"></a>0x016.安全狗会追踪变量，从而发现出是一句话木马吗？</h3><p><strong>是根据特征码，所以很好绕过，值要思路宽，绕狗绕到欢，但这应该不会是一直不变的。</strong></p>
+<h3 id="0x017-access扫出后缀为asp的数据库文件，访问乱码。如何实现到本地利用。"><a href="#0x017-access扫出后缀为asp的数据库文件，访问乱码。如何实现到本地利用。" class="headerlink" title="0x017.access扫出后缀为asp的数据库文件，访问乱码。如何实现到本地利用。"></a>0x017.access扫出后缀为asp的数据库文件，访问乱码。如何实现到本地利用。</h3><p><strong>迅雷下载，直接改后缀为.mdb。</strong></p>
+<h3 id="0x018-提权时选择可读写目录，为何尽量不用带空格的目录"><a href="#0x018-提权时选择可读写目录，为何尽量不用带空格的目录" class="headerlink" title="0x018.提权时选择可读写目录，为何尽量不用带空格的目录?"></a>0x018.提权时选择可读写目录，为何尽量不用带空格的目录?</h3><p><strong>因为exp执行多半需要空格界定参数</strong></p>
+<h3 id="0x019-某个防注入系统，在注入时会提示"><a href="#0x019-某个防注入系统，在注入时会提示" class="headerlink" title="0x019.某个防注入系统，在注入时会提示:"></a>0x019.某个防注入系统，在注入时会提示:</h3><p><img src="/2017/12/13/WEB渗透思路总结/1.png" alt=""><br><strong>如何利用这个防注入系统拿shell？</strong><br><strong>在URL里面直接提交一句话，网站在提交的非法参数和动作的时候,同时也把非法提交的数据写入了系统的后缀为ASP的文件中，可以靠这种方式，找到提交的asp文件路径，然后用菜刀连接，拿下WEBShell</strong></p>
+<h3 id="0x020-审查上传点的元素有什么意义"><a href="#0x020-审查上传点的元素有什么意义" class="headerlink" title="0x020.审查上传点的元素有什么意义?"></a>0x020.审查上传点的元素有什么意义?</h3><p><strong>有些网站上传点的文件限制是在前端实现的，这时只要增加上传类型就能突破限制。</strong></p>
+<h3 id="0x021-目标站禁止注册用户，找回密码处随便输入用-户名提示：“此用户不存在”，你觉得这里怎样利用？"><a href="#0x021-目标站禁止注册用户，找回密码处随便输入用-户名提示：“此用户不存在”，你觉得这里怎样利用？" class="headerlink" title="0x021.目标站禁止注册用户，找回密码处随便输入用 户名提示：“此用户不存在”，你觉得这里怎样利用？"></a>0x021.目标站禁止注册用户，找回密码处随便输入用 户名提示：“此用户不存在”，你觉得这里怎样利用？</h3><p><strong>先爆破用户名，再利用被爆破出来的用户名爆 破密码。<br>其实有些站点，在登陆处也会这样提示<br>所有和数据库有交互的地方都有可能有注入</strong></p>
+<h3 id="0x022-目标站发现某txt的下载地址为-http-www-test-com-down-down-php-file-upwdown-l-txt，你有什么思路？"><a href="#0x022-目标站发现某txt的下载地址为-http-www-test-com-down-down-php-file-upwdown-l-txt，你有什么思路？" class="headerlink" title="0x022.目标站发现某txt的下载地址为 http://www.test.com/down/down.php? file=/upwdown/l.txt，你有什么思路？"></a>0x022.目标站发现某txt的下载地址为 <a href="http://www.test.com/down/down.php?" target="_blank" rel="noopener">http://www.test.com/down/down.php?</a> file=/upwdown/l.txt，你有什么思路？</h3><p><strong>这就是传说中的下载漏洞！在fUe=后面尝试输 入index.php下载他的首页文件，然后在首页文件 里继续查找其他网站的配置文件，可以找出网站的 数据库密码和数据库的地址。</strong></p>
+<h3 id="0x023-甲给你一个目标站，并且告诉你根目录下存-在-abc-目录，并且此目录下存在编辑器和admin目录。请问你的想法是？"><a href="#0x023-甲给你一个目标站，并且告诉你根目录下存-在-abc-目录，并且此目录下存在编辑器和admin目录。请问你的想法是？" class="headerlink" title="0x023.甲给你一个目标站，并且告诉你根目录下存 在/abc/目录，并且此目录下存在编辑器和admin目录。请问你的想法是？"></a>0x023.甲给你一个目标站，并且告诉你根目录下存 在/abc/目录，并且此目录下存在编辑器和admin目录。请问你的想法是？</h3><p><strong>直接在网站二级目录/abc/下扫描敏感文件及目录。</strong></p>
+<h3 id="0x24-在有shell的情况下，如何使用xss实现对目标-站的长久控制"><a href="#0x24-在有shell的情况下，如何使用xss实现对目标-站的长久控制" class="headerlink" title="0x24.在有shell的情况下，如何使用xss实现对目标 站的长久控制?"></a>0x24.在有shell的情况下，如何使用xss实现对目标 站的长久控制?</h3><p><strong>后台登录处加一段记录登录账号密码的js，并 且判断是否登录成功，如果登录成功，就把账号密 码记录到一个生僻的路径的文件中或者直接发到自 己的网站文件中。（此方法适合有价值并且需要深入 控制权限的网络)。<br>在登录后才可以访问的文件中插入XSS脚本。 </strong></p>
+<h3 id="0x25-后台修改管理员密码处，原密码显示为-。-你觉得该怎样实现读出这个用户的密码？"><a href="#0x25-后台修改管理员密码处，原密码显示为-。-你觉得该怎样实现读出这个用户的密码？" class="headerlink" title="0x25.后台修改管理员密码处，原密码显示为*。 你觉得该怎样实现读出这个用户的密码？"></a>0x25.后台修改管理员密码处，原密码显示为*。 你觉得该怎样实现读出这个用户的密码？</h3><p><strong>审查元素把密码处的password属性改成text就 明文显示了</strong></p>
+<h3 id="0x26-发现demo-jsp-uid-110注入点，你有哪-几种思路获取webshell，哪种是优选？"><a href="#0x26-发现demo-jsp-uid-110注入点，你有哪-几种思路获取webshell，哪种是优选？" class="headerlink" title="0x26.发现demo.jsp?uid=110注入点，你有哪 几种思路获取webshell，哪种是优选？"></a>0x26.发现demo.jsp?uid=110注入点，你有哪 几种思路获取webshell，哪种是优选？</h3><p><strong>有写入权限的，构造联合查询语句使用using INTO OUTFILE，可以将查询的输出重定向到系统 的文件中，这样去写入WebShell<br>使用sqlmap -os-shell原理和上面一种相同， 来直接获得一个Shell，这样效率更高<br>通过构造联合查询语句得到网站管理员的账户 和密码，然后扫后台登录后台，再在后台通过改包 上传等方法上传Shell</strong></p>
+<h3 id="0x27-sql注入有以下两个测试选项，选一个并-且阐述不选另一个的理由："><a href="#0x27-sql注入有以下两个测试选项，选一个并-且阐述不选另一个的理由：" class="headerlink" title="0x27.sql注入有以下两个测试选项，选一个并 且阐述不选另一个的理由："></a>0x27.sql注入有以下两个测试选项，选一个并 且阐述不选另一个的理由：</h3><p><strong>A. demo.jsp?id=2+1;;;<br>B. demo.jsp?id=2-1<br>选B，在URL编码中+代表空格，可能会造成混淆<br></strong></p>
+<h3 id="0x028-XSS、CSRF、XEE有什么区别-以及修复方式。"><a href="#0x028-XSS、CSRF、XEE有什么区别-以及修复方式。" class="headerlink" title="0x028.XSS、CSRF、XEE有什么区别?以及修复方式。"></a>0x028.XSS、CSRF、XEE有什么区别?以及修复方式。</h3><p><strong>XSS是跨站脚本攻击，用户提交的数据中可以 构造代码来执行，从而实现窃取用户信息等攻击。</strong><br><strong><font color="red">修复方式：对字符实体进行转义、使用HTTP Only 来禁止JavaScript读取Cookie值、输入时校验、浏 览器与Web应用端采用相同的字符编码。</font></strong><br><strong>CSRF是跨站请求伪造攻击，XSS是实现CSRF 的诸多手段中的一种，是由于没有在关键操作执行 时进行是否由用户自愿发起的确认。</strong><br><strong><font color="red">修复方式：筛 选出需要防范CSRF的页面然后嵌入Token、再次输 入密码、检验Referer</font></strong><br><strong>XXE是XML外部实体注入攻击，XML中可以通 过调用实体来请求本地或者远程内容，和远程文件 保护类似，会引发相关安全问题，例如敏感文件读取</strong><br><strong><font color="red">修复方式:XML解析库在调用时严格禁止对外部实体的解析。</font></strong></p>
+</blockquote>
 
       
 
